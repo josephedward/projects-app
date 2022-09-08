@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-// import API from "../utils/API";
 import API from "../api/hello";
 import { Col, Row, Container } from "../components/Grid";
-// import { List } from "../components/List";
 import { List } from "semantic-ui-react";
-
 import PFrame from "../components/PFrame/PFrame.js";
 import testProjects from "../test/projects.json";
 
@@ -21,7 +18,9 @@ class Projects extends Component {
   }
 
   loadprojects = () => {
-    try {
+    process.env.NODE_ENV === "development" ? (
+      this.setState({ projects: testProjects })
+    ):(
       API.getrepos()
         .then((res) =>
           this.setState({
@@ -33,14 +32,16 @@ class Projects extends Component {
         )
         .catch((err) => {
           console.log(err);
-        });
-    } catch (error) {
-      console.log(error);
-      this.setState({
-        projects: testProjects,
-      });
-    }
+          this.testProjects();
+        })
+        )
   };
+
+  testProjects() {
+    this.setState({
+      projects: testProjects,
+    });
+  }
 
   render() {
     return (
@@ -54,7 +55,6 @@ class Projects extends Component {
                   {this.state.projects.map((project) => (
                     <PFrame
                       key={project.id}
-                      className="shape"
                       title={project.title}
                       name={project.name}
                       html_url={project.html_url}
