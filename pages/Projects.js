@@ -49,7 +49,6 @@ class Projects extends Component {
         <Container fluid>
           <Row>
             <Col size="lg">
-              <h1>Projects</h1>
               {this.state.projects.length ? (
                 <List>
                   {this.state.projects.map((project) => (

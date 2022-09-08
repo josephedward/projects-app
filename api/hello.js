@@ -1,10 +1,3 @@
-// // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-// const ghapi=require("./GHAPI")
-
-// export default function handler(req, res) {
-//   // res.status(200).json({ name: 'John Doe' })
-//   ghapi.callGHAPI().then(repoData => res.json(repoData));
-// }
 import axios from "axios";
 
 export default {
