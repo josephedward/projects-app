@@ -2,7 +2,9 @@ import React, { Component } from "react";
 // import API from "../utils/API";
 import API from "../api/hello";
 import { Col, Row, Container } from "../components/Grid";
-import { List } from "../components/List";
+// import { List } from "../components/List";
+import { List } from "semantic-ui-react";
+
 import PFrame from "../components/PFrame/PFrame.js";
 import testProjects from "../test/projects.json";
 
@@ -46,15 +48,7 @@ class Projects extends Component {
         <Container fluid>
           <Row>
             <Col size="lg">
-              <h3
-                style={{
-                  background: "black",
-                  color: "white",
-                }}
-              >
-                Visit deployment URL and disable mixed-content blocking for full
-                functionality.
-              </h3>
+              <h1>Projects</h1>
               {this.state.projects.length ? (
                 <List>
                   {this.state.projects.map((project) => (

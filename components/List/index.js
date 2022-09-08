@@ -34,7 +34,7 @@ export function ListItem({ children }) {
   }, []);
 
   return width > breakpoint ? (
-    <li
+    <div
       width="75%"
       style={{
         ...mAlign,
@@ -43,9 +43,9 @@ export function ListItem({ children }) {
       className="list-group-item "
     >
       {children}
-    </li>
+    </div>
   ) : (
-    <li
+    <div
       width="100%"
       style={{
         ...mAlign,
@@ -54,7 +54,7 @@ export function ListItem({ children }) {
       className="list-group-item"
     >
       {children}
-    </li>
+    </div>
   );
 }
 
