@@ -19,13 +19,8 @@ class Projects extends Component {
   }
 
   loadprojects = () => {
-    // console.log(process.env)
-    if (process.env.NODE_ENV === "development") {
-      this.setState({
-        projects: testProjects,
-      });
-    } else {
-      API.get()
+    try {
+      API.getrepos()
         .then((res) =>
           this.setState({
             projects: res.data,
@@ -37,10 +32,13 @@ class Projects extends Component {
         .catch((err) => {
           console.log(err);
         });
+    } catch (error) {
+      console.log(error);
+      this.setState({
+        projects: testProjects,
+      });
     }
   };
-
-  
 
   render() {
     return (
