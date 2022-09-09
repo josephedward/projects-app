@@ -2,5 +2,9 @@ import Projects from "./Projects";
 import React from "react";
 
 export default function Home() {
-  return <Projects />;
+  return <Projects 
+  style={{
+    backgroundColor:"black"
+  }}
+  />;
 }

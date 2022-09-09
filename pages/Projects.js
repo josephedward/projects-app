@@ -58,6 +58,7 @@ export default function Projects() {
         display: "flex",
         flexDirection: "column",
         alignItems: "left",
+        backgroundColor: "black",
         // justifyContent: "center",
       }}
     >

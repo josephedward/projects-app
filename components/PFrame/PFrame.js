@@ -6,8 +6,7 @@ export default function PFrame(props) {
   return (
     <ListItem
       style={{
-        paddingBottom: "440px",
-        // backgroundImage: `linear-gradient(#${API.getRandomColor()},#${API.getRandomColor()}, #${API.getRandomColor()})`,
+        backgroundImage: `linear-gradient(#${API.getRandomColor()},#${API.getRandomColor()}, #${API.getRandomColor()})`,
       }}
       key={props.id}
     >
@@ -21,6 +20,7 @@ export default function PFrame(props) {
           paddingTop: "10px",
           margin: "10px",
           boxShadow: "0px 0px 10px #000000",
+          verticalAlign: "middle",
         }}
       >
         <div
@@ -30,20 +30,27 @@ export default function PFrame(props) {
             borderRadius: "10px",
             width: "50%",
             margin: "0 auto",
+            verticalAlign: "middle",
           }}
         >
-          <span>
+          <span
+            style={{
+              verticalAlign: "middle",
+              
+            }}
+          >
             {" "}
             <strong>
-              <p
+              <div
                 style={{
                   fontSize: "18px",
+                  verticalAlign: "middle !important",
                 }}
               >
                 <a href={props.html_url}>{props.name}</a>
-              </p>
+              </div>
             </strong>
-            <p>{props.description}</p>
+            <div>{props.description}</div>
             <strong>
               <a
                 style={{
@@ -66,7 +73,7 @@ export default function PFrame(props) {
           src={props.homepage}
         />
       ) : (
-        <div>{/* <p>Your browser does not support iframes.</p> */}</div>
+        <div>{/* <div>Your browser does not support iframes.</div> */}</div>
       )}
     </ListItem>
   );
