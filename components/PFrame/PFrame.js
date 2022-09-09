@@ -1,33 +1,62 @@
 import React from "react";
 import { ListItem } from "../List";
+import API from "../../api/hello";
 
 export default function PFrame(props) {
   return (
-    <ListItem key={props.id}>
+    <ListItem
+      style={{
+        paddingBottom: "440px",
+        // backgroundImage: `linear-gradient(#${API.getRandomColor()},#${API.getRandomColor()}, #${API.getRandomColor()})`,
+      }}
+      key={props.id}
+    >
       <div
         style={{
-          backgroundColor: "white",
+          backgroundImage: `linear-gradient(#${API.getRandomColor()},#${API.getRandomColor()}, #${API.getRandomColor()})`,
+          // backgroundColor: "white",
           color: "black",
           borderRadius: "10px",
           padding: "10px",
+          paddingTop: "10px",
           margin: "10px",
           boxShadow: "0px 0px 10px #000000",
         }}
       >
-        <strong>
-          <a href={props.html_url}>{props.name}</a>
-        </strong>
-        <br />
-        <a
+        <div
           style={{
-            overflowWrap: "break-word",
-            wordBreak: "break-all",
+            color: "black",
+            backgroundColor: "white",
+            borderRadius: "10px",
+            width: "50%",
+            margin: "0 auto",
           }}
-          href={props.homepage}
         >
-          {props.homepage}
-        </a>
-        <p>{props.description}</p>
+          <span>
+            {" "}
+            <strong>
+              <p
+                style={{
+                  fontSize: "18px",
+                }}
+              >
+                <a href={props.html_url}>{props.name}</a>
+              </p>
+            </strong>
+            <p>{props.description}</p>
+            <strong>
+              <a
+                style={{
+                  overflowWrap: "break-word",
+                  wordBreak: "break-all",
+                }}
+                href={props.homepage}
+              >
+                {props.homepage}
+              </a>
+            </strong>
+          </span>
+        </div>
       </div>
       {props.homepage ? (
         <iframe

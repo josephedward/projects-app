@@ -1,10 +1,5 @@
 import React, { useEffect } from "react";
-
-
-function getRandomColor() {
-  var randomColor = Math.floor(Math.random() * 16777215).toString(16);
-  return randomColor;
-}
+import API from "../../api/hello";
 
 export function List({ children }) {
   const [width, setWidth] = React.useState(window.innerWidth);
@@ -35,10 +30,10 @@ export function ListItem({ children }) {
 
   return width > breakpoint ? (
     <div
-      width="75%"
       style={{
+        width: "75%",
         ...mAlign,
-        backgroundImage: `linear-gradient(#${getRandomColor()},#${getRandomColor()}, #${getRandomColor()})`,
+        // backgroundImage: `linear-gradient(#${API.getRandomColor()},#${API.getRandomColor()}, #${API.getRandomColor()})`,
       }}
       className="list-group-item "
     >
@@ -49,7 +44,7 @@ export function ListItem({ children }) {
       width="100%"
       style={{
         ...mAlign,
-        backgroundImage: `linear-gradient(#${getRandomColor()},#${getRandomColor()}, #${getRandomColor()})`,
+        // backgroundImage: `linear-gradient(#${API.getRandomColor()},#${API.getRandomColor()}, #${API.getRandomColor()})`,
       }}
       className="list-group-item"
     >
@@ -60,8 +55,10 @@ export function ListItem({ children }) {
 
 const mAlign = {
   fontSize: "15px",
-  width: "75%",
+
   margin: "40px auto",
+  paddingTop: "2.5px",
   textAlign: "center",
-  "align-items": "center",
+  alignItems: "center",
+  backgroundColor: "black",
 };
