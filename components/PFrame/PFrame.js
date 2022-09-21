@@ -3,14 +3,6 @@ import { ListItem } from "../List";
 import API from "../../api/hello";
 
 export default function PFrame(props) {
-  let frame = React.createRef();
-
-  const handleFrameLoad = () => {
-    console.log("frame : ",frame)
-  };
-
-  // handleFrameLoad();
-
   return (
     <ListItem
       style={{
@@ -44,6 +36,7 @@ export default function PFrame(props) {
           <span
             style={{
               verticalAlign: "middle",
+              
             }}
           >
             {" "}
@@ -73,20 +66,15 @@ export default function PFrame(props) {
         </div>
       </div>
       {props.homepage ? (
-        
         <iframe
-          className="iframe"
           width="100%"
           height="800"
           title="Deployment Iframe"
           src={props.homepage}
-          // ref={(el) => (frame = el)}
         />
       ) : (
         <div>{/* <div>Your browser does not support iframes.</div> */}</div>
       )}
     </ListItem>
   );
-
-  frame.contentWindow.console.log("hello");
 }
