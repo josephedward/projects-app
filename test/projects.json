@@ -3,14 +3,14 @@
       "id": "testID",
       "name": "Libridex",
       "html_url": "https://github.com/josephedward/Libridex",
-      "homepage": "https://libridex.herokuapp.com/",
+      "homepage": "https://libridex.vercel.app/",
       "description": "weird audible"
     },
     {
       "id": "testID2",
       "name": "Libridex",
       "html_url": "https://github.com/josephedward/Libridex",
-      "homepage": "https://libridex.herokuapp.com/",
+      "homepage": "https://libridex.vercel.app/",
       "description": "weird audible"
     }
 ]
