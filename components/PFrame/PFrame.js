@@ -36,7 +36,6 @@ export default function PFrame(props) {
           <span
             style={{
               verticalAlign: "middle",
-              
             }}
           >
             {" "}
@@ -47,7 +46,7 @@ export default function PFrame(props) {
                   verticalAlign: "middle !important",
                 }}
               >
-                <a href={props.html_url}>{props.name}</a>
+                <a onClick={() => window.open(props.html_url, '_blank')}>{props.name}</a>
               </div>
             </strong>
             <div>{props.description}</div>
