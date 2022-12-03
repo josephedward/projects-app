@@ -13,7 +13,6 @@ export default function PFrame(props) {
       <div
         style={{
           backgroundImage: `linear-gradient(#${API.getRandomColor()},#${API.getRandomColor()}, #${API.getRandomColor()})`,
-          // backgroundColor: "white",
           color: "black",
           borderRadius: "10px",
           padding: "10px",
