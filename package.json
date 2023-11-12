@@ -20,7 +20,7 @@
     "typeface-aleo": "^1.1.13"
   },
   "devDependencies": {
-    "eslint": "8.22.0",
+    "eslint": "8.53.0",
     "eslint-config-next": "12.2.5"
   }
 }
