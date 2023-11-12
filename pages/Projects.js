@@ -72,17 +72,20 @@ export default function Projects() {
         <div>{errorMessage}</div>
       ) : (
         <List>
-          {projects
-            ? projects.map((project) => (
-                <PFrame
-                  key={project.id}
-                  title={project.title}
-                  name={project.name}
-                  html_url={project.html_url}
-                  homepage={project.homepage}
-                  description={project.description}
-                />
-              ))
+          {
+            projects.map((project) => (
+              <PFrame
+                key={project.id}
+                title={project.title}
+                name={project.name}
+                html_url={project.html_url}
+                homepage={project.homepage}
+                description={project.description}
+              />
+            ))
+          }
+          {/* {projects
+            ? 
             : testProjects.map((project) => (
                 <PFrame
                   key={project.id}
@@ -92,7 +95,7 @@ export default function Projects() {
                   homepage={project.homepage}
                   description={project.description}
                 />
-              ))}
+              ))} */}
         </List>
       )}
     </div>
